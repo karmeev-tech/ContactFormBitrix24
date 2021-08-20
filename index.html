@@ -43,30 +43,26 @@ input[type=submit]:hover {
 <h3>Contact Form</h3>
 
 <div class="container">
-  <form action="/action_page.php">
-    <label for="fname">Name</label>
-    <input type="text" id="fname" name="name" placeholder="Your name..">
 
-    <label for="UCompany">Company</label>
-    <input type="text" id="UCompany" name="company" placeholder="Company..">
-    
+    <form action="webhook.php" method="post">
+        <label for="fname">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name.."> <br>
+
+        <label for="UCompany">Company</label>
+        <input type="text" id="ñompany" name="company" placeholder="Company.."> <br>
+
         <label for="mail">Email</label>
-    <input type="text" id="mail" name="email" placeholder="Your Mail...">
-    
-    <label for="numb">Number</label>
-    <input type="text" id="numb" name="number" placeholder="Your Number...">
+        <input type="text" id="email" name="email" placeholder="Your Mail..."> <br>
 
-    <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        <label for="numb">Number</label>
+        <input type="text" id="numb" name="number" placeholder="Your Number..."> <br>
 
-    <button onclick="OnClickButton(fname,UCompany,mail,numb,subject)"><input type="submit" value="Submit"></button>
-    
-    <script src="scriptContactForm.js"></script>
-    
-    <script src="//api.bitrix24.com/api/v1/"></script>
+        <label for="subject">Subject</label>
+        <textarea id="subj" name="subj" placeholder="Write something.." style="height:200px"></textarea> <br>
 
-    
-  </form>
+        <button type="submit">Îòïğàâèòü</button>
+
+    </form>
 </div>
 
 </body>
