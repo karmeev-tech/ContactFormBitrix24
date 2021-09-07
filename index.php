@@ -38,6 +38,7 @@ input[type=submit]:hover {
 </style>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="/call.js"></script>
 
 </head>
 <body>
@@ -46,7 +47,7 @@ input[type=submit]:hover {
 
 <div class="container">
 
-    <form action="webhook.php" method="post">
+    <form onsubmit="call()" method="post">
         <label for="fname">Name</label>
         <input type="text" id="name" name="name" placeholder="Your name.."> <br>
 
@@ -63,19 +64,10 @@ input[type=submit]:hover {
         <textarea id="subj" name="subj" placeholder="Write something.." style="height:200px"></textarea> <br>
 
         <button type="submit" onclick= >Send</button>
-        <label>Result</label>
+        <label id="result">Result</label>
 
     </form>
 </div>
-
-
-<script>
-var name = $("name").val();
-var comp = $("company").val();
-var mail = $("email").val();
-var numb = $("numb").val();
-var subj = $("subj").val();
-</script>
 
 <script>
   function makeXHR() {
