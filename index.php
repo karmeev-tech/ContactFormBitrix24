@@ -75,7 +75,7 @@ var comp = $("company").val();
 var mail = $("email").val();
 var numb = $("numb").val();
 var subj = $("subj").val();
-</sript>
+</script>
 
 //ajax 
 <script>
@@ -95,5 +95,6 @@ var subj = $("subj").val();
             xhr.send();
         }
 </script>
+
 </body>
 </html>
