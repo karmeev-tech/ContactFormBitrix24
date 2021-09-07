@@ -37,6 +37,8 @@ input[type=submit]:hover {
 }
 </style>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
 </head>
 <body>
 
@@ -49,7 +51,7 @@ input[type=submit]:hover {
         <input type="text" id="name" name="name" placeholder="Your name.."> <br>
 
         <label for="UCompany">Company</label>
-        <input type="text" id="�ompany" name="company" placeholder="Company.."> <br>
+        <input type="text" id="company" name="company" placeholder="Company.."> <br>
 
         <label for="mail">Email</label>
         <input type="text" id="email" name="email" placeholder="Your Mail..."> <br>
@@ -60,10 +62,38 @@ input[type=submit]:hover {
         <label for="subject">Subject</label>
         <textarea id="subj" name="subj" placeholder="Write something.." style="height:200px"></textarea> <br>
 
-        <button type="submit">���������</button>
+        <button type="submit" onclick= >Send</button>
+        <label>Result</label>
 
     </form>
 </div>
 
+//??????????? ?? ????? ????
+<script>
+var name = $("name").val();
+var comp = $("company").val();
+var mail = $("email").val();
+var numb = $("numb").val();
+var subj = $("subj").val();
+</sript>
+
+//ajax 
+<script>
+  function makeXHR() {
+            let first = document.querySelector('.first').value,
+                last = document.querySelector('.last').value,
+                xhr = new XMLHttpRequest(); // создание объекта для работы с асинхронными запросами
+            xhr.onreadystatechange = function () {
+                if(xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById('result').innerHTML=xhr.responseText;
+                }
+
+            };
+            // формирование запроса
+            xhr.open('GET', "webhook.php?a="+first+"&b="+last, true);
+            // отпавка запроса
+            xhr.send();
+        }
+</script>
 </body>
 </html>
