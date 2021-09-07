@@ -68,7 +68,7 @@ input[type=submit]:hover {
     </form>
 </div>
 
-//??????????? ?? ????? ???? ,,,,
+
 <script>
 var name = $("name").val();
 var comp = $("company").val();
@@ -77,7 +77,6 @@ var numb = $("numb").val();
 var subj = $("subj").val();
 </script>
 
-//ajax 
 <script>
   function makeXHR() {
             let first = document.querySelector('.first').value,
