@@ -37,7 +37,7 @@ input[type=submit]:hover {
 }
 </style>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
 <script src="/call.js"></script>
 
 </head>
@@ -47,7 +47,7 @@ input[type=submit]:hover {
 
 <div class="container">
 
-    <form onsubmit="call()" method="post">
+    <!--<form onsubmit="call()" method="post">-->
         <label for="fname">Name</label>
         <input type="text" id="name" name="name" placeholder="Your name.."> <br>
 
@@ -63,11 +63,29 @@ input[type=submit]:hover {
         <label for="subject">Subject</label>
         <textarea id="subj" name="subj" placeholder="Write something.." style="height:200px"></textarea> <br>
 
-        <button type="submit" onclick= >Send</button>
+        <button id="button" type="submit" onclick= >Send</button>
         <label id="result">Result</label>
 
-    </form>
+    <!--</form>-->
 </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+<script>
+
+
+$(document).ready(function() {    
+
+    $(document).on('click', '#button', function() {    
+    
+        console.dir($('.container').find(':input'));
+
+    });
+
+});
+
+</script>
 
 <script>
   function makeXHR() {
