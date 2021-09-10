@@ -61,7 +61,7 @@ input[type=submit]:hover {
         <input type="text" id="numb" name="number" placeholder="Your Number..."> <br>
 
         <label for="subject">Subject</label>
-        <textarea id="subj" name="subj" placeholder="Write something.." style="height:200px"></textarea> <br>
+        <textarea id="subj"  name="subj" placeholder="Write something.." style="height:200px"></textarea> <br>
 
         <button id="button" type="submit" onclick= >Send</button>
         <label id="result">Result</label>
@@ -74,35 +74,35 @@ input[type=submit]:hover {
 
 <script>
 
-
+function post(name,company,email,numb,subj) {
+    $.ajax({
+        url:"/webhook.php",
+        method:"POST",
+        data:{name:name,company:company,email:email,numb:numb,subj:subj},
+        success:function(data){            
+            console.dir(data);
+            data_json=JSON.parse(data);
+            
+            $('#result').append('</br>' + data_json['error']+'</br>')
+            $('#result').append('</br>' + data_json['error_description']+'</br>')
+        }
+    })    
+}
 $(document).ready(function() {    
 
     $(document).on('click', '#button', function() {    
-    
-        console.dir($('.container').find(':input'));
+        var name = $('#name').val();
+        var company = $('#company').val();
+        var email = $('#email').val();
+        var numb = $('#numb').val();
+        var subj = $('#subj').val();
+        post(name,company,email,numb,subj);
+        console.dir($('input'));
 
     });
 
 });
 
-</script>
-
-<script>
-  function makeXHR() {
-            let first = document.querySelector('.first').value,
-                last = document.querySelector('.last').value,
-                xhr = new XMLHttpRequest(); // создание объекта для работы с асинхронными запросами
-            xhr.onreadystatechange = function () {
-                if(xhr.readyState == 4 && xhr.status == 200) {
-                    document.getElementById('result').innerHTML=xhr.responseText;
-                }
-
-            };
-            // формирование запроса
-            xhr.open('GET', "webhook.php?a="+first+"&b="+last, true);
-            // отпавка запроса
-            xhr.send();
-        }
 </script>
 
 </body>
