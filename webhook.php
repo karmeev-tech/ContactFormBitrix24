@@ -41,7 +41,8 @@ include('tools.php');
         'params' => array("REGISTER_SONET_EVENT" => "Y")
     );
     
-  
+    $msg = $name . " | " . $company . " | " . $email . " | " . $phone . " | " . $subj;
+    im($user_id,$msg); //добавить user id из нового битрикса(мой)
 
  echo print_r(REST_API('crm.deal.add', $queryData),true);
 
