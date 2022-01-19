@@ -12,7 +12,7 @@ include('tools.php');
     $numb = $_POST['numb'];
     $subj = $_POST['subj'];
 
-    //$queryUrl = 'https://b24-nsad9o.bitrix24.ru/rest/1/r3unctg0vam7omey/user.current.json';
+    //$queryUrl = 'https://xxxxxx.bitrix24.ru/xxxxxxxx/user.current.json';
   
 
   
