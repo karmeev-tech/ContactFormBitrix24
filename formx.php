@@ -15,7 +15,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED
     } 
     $name = $_POST['name'];
     $email = $_POST['email'];
-mail("povelitel.rap@yandex.ru", "Заявка с сайта", "Имя:".$name.". E-mail: ".$email ,"From: kkrasnobaev@bk.ru \r\n"); //здесь делаем отправку заявки на почту. не забудьте поменять оба адреса
+mail("your mail", "Заявка с сайта", "Имя:".$name.". E-mail: ".$email ,"From: ... \r\n"); //здесь делаем отправку заявки на почту. не забудьте поменять оба адреса
         echo 'Заявка отправлена!';
     	return; //возвращаем сообщение пользователю
     }
