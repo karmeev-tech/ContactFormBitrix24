@@ -1,7 +1,7 @@
 <?php
 function REST_API($method, array $params)
 {
-	$queryUrl = 'https://b24-efglx4.bitrix24.ru/rest/1/w3bdo3i6kmtww5rv/'.$method.'.json';
+	$queryUrl = 'https://xxxx.bitrix24.ru/rest/xxxxxx/'.$method.'.json';
 	$queryData = http_build_query(
 		array_merge($params)
 	);
